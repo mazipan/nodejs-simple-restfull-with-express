@@ -3,7 +3,7 @@
  */
 var mongoose = require('mongoose');
 
-var conn = mongoose.connect('mongodb://localhost/users_database');
+var conn = mongoose.connect('mongodb://localhost/restapi_database');
 
 mongoose.connection.on('open', function (ref) {
     connected=true;

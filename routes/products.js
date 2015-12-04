@@ -18,18 +18,17 @@ router.get('/', function (req, res){
 
 router.post('/', function (req, res){
     var product;
-    console.log("POST: ");
-    console.log(req.body);
     product = new ProductModel({
         title: req.body.title,
         description: req.body.description,
-        style: req.body.style,
+        price: req.body.price
     });
     product.save(function (err) {
         if (!err) {
-            return console.log("created");
+            return console.log("product has been created");
         } else {
-            return console.log(err);
+            console.log(err);
+            return res.send('error when create product');
         }
     });
     return res.send(product);
@@ -38,9 +37,11 @@ router.post('/', function (req, res){
 router.get('/:id', function (req, res){
     return ProductModel.findById(req.params.id, function (err, product) {
         if (!err) {
+            console.log('get product '+ req.params.id);
             return res.send(product);
         } else {
-            return console.log(err);
+            console.log(err);
+            return res.send('error when get product '+ req.params.id);
         }
     });
 });
@@ -49,10 +50,10 @@ router.put('/:id', function (req, res){
     return ProductModel.findById(req.params.id, function (err, product) {
         product.title = req.body.title;
         product.description = req.body.description;
-        product.style = req.body.style;
+        product.price = req.body.price;
         return product.save(function (err) {
             if (!err) {
-                console.log("updated");
+                console.log("product has been updated "+ req.params.id);
             } else {
                 console.log(err);
             }
@@ -65,10 +66,11 @@ router.delete('/:id', function (req, res){
     return ProductModel.findById(req.params.id, function (err, product) {
         return product.remove(function (err) {
             if (!err) {
-                console.log("removed");
-                return res.send('');
+                console.log("product removed");
+                return res.send('product '+ req.params.id +'has been removed');
             } else {
                 console.log(err);
+                return res.send('error when remove product '+ req.params.id);
             }
         });
     });
