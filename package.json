@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-restfull-basic",
+  "name": "nodejs-simple-restfull-with-express",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -14,5 +14,12 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "~0.5.0",
+    "mocha": "^2.2.5",
+    "should": "^7.0.2",
+    "supertest": "^1.0.1"
   }
 }

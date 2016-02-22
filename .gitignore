@@ -27,3 +27,5 @@ build/Release
 node_modules
 # IDE Webstorm configuration
 .idea
+# build folder by gruntjs
+build

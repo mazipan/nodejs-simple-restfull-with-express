@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('nodejs-restfull-basic:server');
+var app = require('../src/app');
+var debug = require('debug')('nodejs-simple-restfull-with-express:server');
 var http = require('http');
 
 /**
