@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    div(class='fullwidth inline')
+        h2(class='inline') Product List
+        a(href='./app/form', class='btn btn-info margin inline right') Add New
+    div(id="form-error-message")
+    table.table.table-striped
+        thead
+            tr
+                th No
+                th Title
+                th Description
+                th Price
+                th Last Update
+                th Action
+        tbody
+        - each product, index in products
+            tr
+              td
+                = index+1
+              td
+                = product.title
+              td
+                = product.description
+              td
+                = product.price
+              td
+                = product.modified
+              td
+                a(href='./app/form/#{product._id}', class='btn btn-info margin') Update
+                a(href='#delete', onclick="submitDelete('#{product._id}')" class='btn btn-info margin') Delete

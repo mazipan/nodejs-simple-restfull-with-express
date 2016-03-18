@@ -8,6 +8,7 @@ var router = express.Router();
 
 router.route('/')
 
+    // GET ALL DATA
     .get(function (req, res){
             return ProductModel.find(function (err, products) {
                 if (!err) {
@@ -19,6 +20,7 @@ router.route('/')
             });
     })
 
+    // INSERT DATA
     .post(function (req, res){
         var product;
         var errorMessage = "";
@@ -52,6 +54,7 @@ router.route('/')
 
 router.route('/:id')
 
+    // GET BY ID
     .get(function (req, res){
         return ProductModel.findById(req.params.id, function (err, product) {
             if (!err) {
@@ -64,6 +67,7 @@ router.route('/:id')
         });
     })
 
+    // UPDATE DATA
     .put(function (req, res){
         return ProductModel.findById(req.params.id, function (err, product) {
             if(req.body.title !== null && req.body.title !== ""){
@@ -83,6 +87,7 @@ router.route('/:id')
         });
     })
 
+    // DELETE DATA
     .delete(function (req, res){
         return ProductModel.findById(req.params.id, function (err, product) {
             return product.remove(function (err) {

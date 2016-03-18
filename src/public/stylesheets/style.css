@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+.margin{
+  margin: 5px;
+}
+.fullwidth{
+  width: 100%;
+}
+.inline{
+  display: inline-block;
+}
+.right{
+  float: right;
+}
+.control-label{
+  text-align: left !important;
+}

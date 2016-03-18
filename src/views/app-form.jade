@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    div(class='fullwidth inline')
+        h2(class='inline') Product Form
+    form(role="form" class="form-horizontal")
+        div(id="form-error-message")
+        div(class="form-group")
+            label(class="control-label col-sm-2" for="title") Title :
+            div(class="col-sm-10")
+                input(type='text', name='title', id='title', value="#{product.title}", class="form-control", required)
+        div(class="form-group")
+            label(class="control-label col-sm-2" for="description") Description :
+            div(class="col-sm-10")
+                textarea(name='description', id='description', value="#{product.description}", class="form-control")
+        div(class="form-group")
+            label(class="control-label col-sm-2" for="price") Price :
+            div(class="col-sm-10")
+                div(class="input-group")
+                    div(class="input-group-addon") Rp
+                    input(type='number', name='price', id='price', value='#{product.price}', class="form-control")
+                    div(class="input-group-addon") .00
+        div(class="form-group")
+            div(class="col-sm-2")
+            div(class="col-sm-10")
+                if isNew
+                    a(href="#add" onclick="submitSaveForm()" class='btn btn-info margin') Save
+                else
+                    a(href="#edit" onclick="submitUpdateForm('#{product._id}')" class='btn btn-info margin') Save
+
+                    a(href="../app" class='btn btn-info margin') Cancel
+
