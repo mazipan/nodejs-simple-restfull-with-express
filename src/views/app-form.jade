@@ -6,15 +6,15 @@ block content
     form(role="form" class="form-horizontal")
         div(id="form-error-message")
         div(class="form-group")
-            label(class="control-label col-sm-2" for="title") Title :
+            label(class="control-label col-sm-2" for="title") Product Title :
             div(class="col-sm-10")
                 input(type='text', name='title', id='title', value="#{product.title}", class="form-control", required)
         div(class="form-group")
-            label(class="control-label col-sm-2" for="description") Description :
+            label(class="control-label col-sm-2" for="description") Product Description :
             div(class="col-sm-10")
                 textarea(name='description', id='description', value="#{product.description}", class="form-control")
         div(class="form-group")
-            label(class="control-label col-sm-2" for="price") Price :
+            label(class="control-label col-sm-2" for="price") Product Price :
             div(class="col-sm-10")
                 div(class="input-group")
                     div(class="input-group-addon") Rp
@@ -24,9 +24,14 @@ block content
             div(class="col-sm-2")
             div(class="col-sm-10")
                 if isNew
-                    a(href="#add" onclick="submitSaveForm()" class='btn btn-info margin') Save
+                    a(href="#add" onclick="submitSaveForm()" class='btn btn-info margin')
+                        span(class="glyphicon glyphicon-floppy-disk" aria-hidden="true")
+                        span(class="margin") Save
                 else
-                    a(href="#edit" onclick="submitUpdateForm('#{product._id}')" class='btn btn-info margin') Save
-
-                    a(href="../app" class='btn btn-info margin') Cancel
+                    a(href="#edit" onclick="submitUpdateForm('#{product._id}')" class='btn btn-success margin')
+                        span(class="glyphicon glyphicon-floppy-disk" aria-hidden="true")
+                        span(class="margin") Save
+                a(href="#{root}/app" class='btn btn-danger margin')
+                    span(class="glyphicon glyphicon-arrow-left" aria-hidden="true")
+                    span(class="margin") Cancel
 

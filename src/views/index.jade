@@ -1,27 +1,28 @@
 extends layout
 
 block content
-  h1= title
-     - each api in apis
-        h2 Product API List
-        p
-            table.table.table-striped
-                thead
-                    tr
-                        th NAME
-                        th URL
-                        th METHOD
-                        th ACTION
-                tbody
-                - each product in api.products
-                    tr
-                      td
+    h1= title
+    div(class='fullwidth inline')
+        h2(class='inline') Product API List
+        a(href='./app', class='btn btn-danger margin inline right') Open Application!
+    - each api in apis
+        table.table.table-striped
+            thead
+                tr
+                    th NAME
+                    th URL
+                    th METHOD
+                    th ACTION
+            tbody
+            - each product in api.products
+                tr
+                    td
                         = product.name
-                      td
+                    td
                         = product.url
-                      td
+                    td
                         = product.method
-                      td
+                    td
                         a(href=product.url, class='btn btn-info', target='blank') View
 
 
