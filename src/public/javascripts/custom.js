@@ -1,8 +1,6 @@
 /**
  * Created by irfan.maulana on 3/17/2016.
  */
-const URL_ROOT = "http://localhost:3000";
-
 function validateForm(){
     var isValid = false;
     if($("#title").val() !== ""){
@@ -20,7 +18,7 @@ function submitSaveForm(){
         };
         $.ajax({
             type: "POST",
-            url: URL_ROOT + "/api/products",
+            url: ROOT_URL + "/api/products",
             data: product,
             success: function(response){
                 handleAjaxSubmitResponse(response);
@@ -40,7 +38,7 @@ function submitUpdateForm(idProduct){
         };
         $.ajax({
             type: "PUT",
-            url: URL_ROOT + "/api/products/" + idProduct,
+            url: ROOT_URL + "/api/products/" + idProduct,
             data: product,
             success: function(response){
                 handleAjaxSubmitResponse(response);
@@ -55,7 +53,7 @@ function submitDelete(idProduct){
     if(idProduct){
         $.ajax({
             type: "DELETE",
-            url: URL_ROOT + "/api/products/" + idProduct,
+            url: ROOT_URL + "/api/products/" + idProduct,
             success: function(response){
                 handleAjaxSubmitResponse(response);
             },
@@ -67,7 +65,7 @@ function handleOnErrorAjaxSubmit(response){
     if(response.errorDesc.message){
         showFormErrorMessage(response.errorDesc.message);
     }else if(response.errorDesc.err){
-        showFormErrorMessage(response.err);
+        showFormErrorMessage(response.errorDesc.err);
     }else{
         showFormErrorMessage("Something was wrong, please refresh browser and try again!");
     }
@@ -75,7 +73,7 @@ function handleOnErrorAjaxSubmit(response){
 
 function handleAjaxSubmitResponse(response){
     if(response.result){
-        window.location = URL_ROOT + "/app";
+        window.location = ROOT_URL + "/app";
     }else{
         handleOnErrorAjaxSubmit(response);
     }

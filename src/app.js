@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var products = require('./routes/products');
 var appproduct = require('./routes/app-product');
+var angularappproduct = require('./routes/angular-app-product');
 
 
 var app = express();
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', routes);
 app.use('/api/products', products);
 app.use('/app', appproduct);
+app.use('/angularapp', angularappproduct);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

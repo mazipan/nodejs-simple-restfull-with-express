@@ -5,9 +5,13 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href="/stylesheets/library/bootstrap.min.css", )
     link(rel="stylesheet", href="/stylesheets/library/bootstrap-theme.min.css")
+    block css
   body
     div(class='container')
       block content
     script(src="/javascripts/library/jquery-1.11.0.min.js")
     script(src="/javascripts/library/bootstrap.min.js")
+    script const ROOT_URL = "http://localhost:3000";
+    block js
     script(src="/javascripts/custom.js")
+
