@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -18,24 +19,39 @@ module.exports = function(grunt) {
                     dest: 'build/',
                     ext: '.min.js'
                 }]
-                //files: grunt.file.expandMapping([
-                //        '!**/node_modules/**',
-                //        '**/connection/connection.js',
-                //        '<%= pkg.name %> /model/*.js',
-                //        '<%= pkg.name %> /routes/*.js'],
-                //    'build/', {
-                //    rename: function(destBase, destPath) {
-                //        return destBase+destPath.replace('.js', '.min.js');
-                //    }
-                //})
             }
-        }
+        },
+
+        cssmin: {
+            options: {
+                keepSpecialComments: 0,
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
+            files : {
+                expand : true,
+                cwd : 'src/public/stylesheets/',
+                src : ['**/*.css', '!**/*.min.css'],
+                dest : 'build/public/stylesheets/',
+                ext : '.min.css'
+            },
+            combine : {
+                files: {
+                    'build/public/stylesheets/all-combine-style.min.css':
+                        [
+                            'src/public/stylesheets/library/bootstrap.min.css',
+                            'src/public/stylesheets/library/bootstrap-theme.min.css',
+                            'build/public/stylesheets/style.min.css'
+                        ]
+                }
+            }
+        },
+
     });
 
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     // Default task(s).
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', [ 'uglify', 'cssmin']);
 
 };
