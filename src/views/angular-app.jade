@@ -25,7 +25,7 @@ block content
                         th Action
                 tbody
                     tr(ng-repeat="product in products")
-                        td {{$index}}
+                        td {{$index+1}}
                         td(ng-bind="product.title")
                         td(ng-bind="product.description")
                         td(ng-bind="product.price")
