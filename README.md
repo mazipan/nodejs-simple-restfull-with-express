@@ -33,6 +33,14 @@ localhost:3000/app ==> CRUD using jquery
 localhost:3000/angularapp ==> CRUD using AngularJS
 </pre>
 
+<br/>
+<h3>Here you will learn about :</h3>
+- Create server route using ExpressJS, read more : https://expressjs.com/en/guide/routing.html
+- Using server side templating using Jade Templating, read more : http://jade-lang.com/tutorial/
+- Create AngularJS Services for wrapping all request to server using Angular Resources, read more : https://docs.angularjs.org/api/ngResource/service/$resource
+- Create CRUD using AngularJS ==> localhost:3000/angularapp
+- Create CRUD using JQuery ==> localhost:3000/app
+
 </br>
 Hope will usefull for you all.</br>
 
