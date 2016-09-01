@@ -28,9 +28,9 @@ npm start
 </pre>
 - Open in Browser
 <pre>
-<a href="localhost:3000">localhost:3000</a> ==> index
-<a href="localhost:3000/app">localhost:3000/app</a> ==> CRUD using jquery
-<a href="localhost:3000/angularapp">localhost:3000/angularapp</a> ==> CRUD using AngularJS
+<a href="http://localhost:3000">http://localhost:3000</a> ==> index
+<a href="http://localhost:3000/app">http://localhost:3000/app</a> ==> CRUD using jquery
+<a href="http://localhost:3000/angularapp">http://localhost:3000/angularapp</a> ==> CRUD using AngularJS
 </pre>
 
 <br/>
@@ -38,8 +38,8 @@ npm start
 - Create server route using ExpressJS, read more : https://expressjs.com/en/guide/routing.html
 - Using server side templating using Jade Templating, read more : http://jade-lang.com/tutorial/
 - Create AngularJS Services for wrapping all request to server using Angular Resources, read more : https://docs.angularjs.org/api/ngResource/service/$resource
-- Create CRUD using AngularJS ==> localhost:3000/angularapp
-- Create CRUD using JQuery ==> localhost:3000/app
+- Create CRUD using AngularJS ==> <a href="http://localhost:3000/angularapp">http://localhost:3000/angularapp</a>
+- Create CRUD using JQuery ==> <a href="http://localhost:3000/app">http://localhost:3000/app</a>
 
 </br>
 Hope will usefull for you all.</br>
