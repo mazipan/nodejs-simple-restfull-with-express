@@ -1,7 +1,7 @@
 # nodejs-simple-restfull-with-express
 This is sample for creating Restful API with nodejs.</br></br>
 
-<h3>Using technology :</h3>
+<h3>Using technology</h3>
 - NodeJS and Expressjs for server routing
 - Jade for server templating
 - Angularjs framework
@@ -9,7 +9,7 @@ This is sample for creating Restful API with nodejs.</br></br>
 - Grunt for Task Runner
 
 <br/>
-<h3>Installation :</h3>
+<h3>Installation</h3>
 - Install grunt-cli, read : http://gruntjs.com/getting-started
 <pre>
 sudo npm install -g grunt-cli
@@ -28,13 +28,13 @@ npm start
 </pre>
 - Open in Browser
 <pre>
-localhost:3000 ==> index
-localhost:3000/app ==> CRUD using jquery
-localhost:3000/angularapp ==> CRUD using AngularJS
+<a href="localhost:3000">localhost:3000</a> ==> index
+<a href="localhost:3000/app">localhost:3000/app</a> ==> CRUD using jquery
+<a href="localhost:3000/angularapp">localhost:3000/angularapp</a> ==> CRUD using AngularJS
 </pre>
 
 <br/>
-<h3>Here you will learn about :</h3>
+<h3>Here you will learn about</h3>
 - Create server route using ExpressJS, read more : https://expressjs.com/en/guide/routing.html
 - Using server side templating using Jade Templating, read more : http://jade-lang.com/tutorial/
 - Create AngularJS Services for wrapping all request to server using Angular Resources, read more : https://docs.angularjs.org/api/ngResource/service/$resource
