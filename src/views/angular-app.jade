@@ -2,9 +2,9 @@ extends layout
 block js
     script(src="/javascripts/library/angular.min.js")
     script(src = "/javascripts/library/angular-resource.min.js")
-    script(src = "/javascripts/ngscript/Application.js")
-    script(src = "/javascripts/ngscript/app-controller.js")
-    script(src = "/javascripts/ngscript/app-service.js")
+    script(src = "/javascripts/ng-script/Application.js")
+    script(src = "/javascripts/ng-script/app-controller.js")
+    script(src = "/javascripts/ng-script/app-service.js")
 block content
     div(class='basic-app-container' ng-app="irfan.basic.Application" ng-controller='basic.ctrl')
         div(class='basic-app-table' ng-show="viewPage === 'ngtable'")
