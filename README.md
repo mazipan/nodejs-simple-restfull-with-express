@@ -6,7 +6,7 @@ This is sample for creating Restful API with nodejs.</br></br>
 <h3>Using technology</h3>
 - NodeJS and Expressjs for server routing
 - Jade for server templating
-- Angularjs framework
+- Angularjs, jQuery, VueJs
 - Bootstrap for CSS template
 - Grunt for Task Runner
 

@@ -11,6 +11,7 @@ var Product = new Schema({
     price: { type: Number},
     modified: { type: Date, default: Date.now }
 });
+
 var ProductModel = mongoose.model('Product', Product);
 
 module.exports = ProductModel;

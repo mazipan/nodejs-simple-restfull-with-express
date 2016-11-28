@@ -2,5 +2,7 @@ extends layout
 
 block content
   h1= message
-  h2= error.status
+  div(class="alert alert--radius alert--red")
+    strong Error Message!
+    span= error.status
   pre #{error.stack}

@@ -20,18 +20,13 @@ block content
                     div(class="input-group-addon") Rp
                     input(type='number', name='price', id='price', value='#{product.price}', class="form-control")
                     div(class="input-group-addon") .00
+
         div(class="form-group")
             div(class="col-sm-2")
             div(class="col-sm-10")
                 if isNew
-                    a(href="#add" onclick="submitSaveForm()" class='btn btn-success margin')
-                        span(class="glyphicon glyphicon-floppy-disk" aria-hidden="true")
-                        span(class="margin") Save
+                    a(href="#add" onclick="submitSaveForm()" class='button button--blue margin') Save
                 else
-                    a(href="#edit" onclick="submitUpdateForm('#{product._id}')" class='btn btn-success margin')
-                        span(class="glyphicon glyphicon-floppy-disk" aria-hidden="true")
-                        span(class="margin") Save
-                a(href="#{root}/app" class='btn btn-danger margin')
-                    span(class="glyphicon glyphicon-arrow-left" aria-hidden="true")
-                    span(class="margin") Cancel
+                    a(href="#edit" onclick="submitUpdateForm('#{product._id}')" class='button button--blue margin') Save
+                a(href="#{root}/app" class='button button--red margin') Cancel
 

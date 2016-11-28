@@ -5,12 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var products = require('./routes/products');
-var appproduct = require('./routes/app-product');
-var appproductangular = require('./routes/app-product-angular');
-var appproductvue = require('./routes/app-product-vue');
-
 var app = express();
 
 // view engine setup
@@ -24,6 +18,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
+
+
+var routes = require('./routes/index');
+var products = require('./routes/products');
+var appproduct = require('./routes/app-product');
+var appproductangular = require('./routes/app-product-angular');
+var appproductvue = require('./routes/app-product-vue');
 
 app.use('/', routes);
 app.use('/api/products', products);
